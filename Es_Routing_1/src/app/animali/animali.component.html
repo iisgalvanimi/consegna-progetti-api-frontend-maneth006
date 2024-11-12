@@ -1,1 +1,9 @@
-<p>animali works!</p>
+<div>
+    <div class="row">
+        <div class="container-fluid border col"  *ngFor="let element of animals">
+            <p>Nome: <strong>{{element.name}}</strong></p>
+            <p>Emoji: <i>{{element.emoji}}</i></p>
+        </div>
+    </div>
+</div>
+
