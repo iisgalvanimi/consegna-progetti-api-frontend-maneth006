@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-
+import {Foo} from './foo.model';
 
 @Component({
   selector: 'app-foo',
@@ -12,11 +12,13 @@ export class FooComponent implements OnInit{
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
-  
+
+  fooData! : Foo[];
   data!: Object;
   loading!: boolean;
   o! :Observable<Object>;
-  
+  oFoo! : Observable<Foo[]>;
+
   constructor(public http: HttpClient){
 
   }
@@ -62,7 +64,12 @@ export class FooComponent implements OnInit{
     });
 }
 
-
+makeTypedRequest() : void
+  {
+    //oFoo : Observable<Foo[]>; va dichiarato tra gli attributi della classe 
+    this.oFoo = this.http.get<Foo[]>('https://jsonplaceholder.typicode.com/posts');
+    this.oFoo.subscribe(data => {this.fooData = data;});
+  }
 
 
 }
