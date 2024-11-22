@@ -1,0 +1,8 @@
+<div *ngIf="card">
+    <h2>{{ card.name }}</h2>
+    <img [src]="card.images.small" alt="Card image" />
+    <p><strong>Tipo:</strong> {{ card.types?.join(', ') }}</p>
+    <p><strong>HP:</strong> {{ card.hp }}</p>
+    <p><strong>Rarità:</strong> {{ card.rarity }}</p>
+    <p><strong>Serie:</strong> {{ card.set.name }}</p>
+  </div>
