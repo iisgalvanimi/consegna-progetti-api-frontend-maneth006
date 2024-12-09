@@ -1,0 +1,30 @@
+<div *ngIf="loading" class="loading">Caricamento in corso...</div>
+
+<div *ngIf="!loading && c1Dati" class="container card-custom">
+
+  <div class="card-wrapper">
+    <!-- Immagine -->
+    <img [src]="c1Dati.images.small" [alt]="c1Dati.name" class="card-img-left img-fluid" />
+    <!-- Card con i dati -->
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ c1Dati.name }}</h5>
+        <p class="card-text">Tipo: {{ c1Dati.types.join(', ') }}</p>
+        <p class="card-text">
+            Weaknesses:
+            <span *ngFor="let weakness of c1Dati.weaknesses">{{ weakness.type }}</span>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Messaggio di errore -->
+<div *ngIf="!loading && error" class="error-message">
+  <p>Si è verificato un errore nel recuperare la carta Charizard.</p>
+</div>
+
+<!-- Messaggio se non è stata trovata la carta Charizard -->
+<div *ngIf="!loading && !c1Dati" class="no-card-message">
+  <p>Nessuna carta Charizard.</p>
+</div>

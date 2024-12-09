@@ -1,0 +1,98 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8; /* Sfondo chiaro e soft */
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: #ffffff; /* Sfondo bianco per la navbar */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); /* Ombra più morbida */
+    padding: 0.8rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #f1f1f1; /* Leggero bordo inferiore per separare */
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Modifica colore navbar al passaggio del mouse */
+  .navbar:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Navbar toggler per dispositivi mobili */
+  .navbar-toggler {
+    border: none;
+    outline: none;
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #4CAF50; /* Verde per il toggler */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  .navbar-toggler-icon:hover {
+    transform: rotate(180deg); /* Rotazione del toggle all'hover */
+  }
+  
+  /* Navbar links */
+  .navbar-nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-left: 0;
+  }
+  
+  .nav-item {
+    position: relative;
+  }
+  
+  /* Link nella navbar */
+  .nav-link {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #333; /* Colore base dei link */
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #4CAF50; /* Colore verde sui hover */
+    transform: scale(1.1); /* Effetto di ingrandimento al passaggio del mouse */
+  }
+  
+  .nav-link.active {
+    color: #4CAF50; /* Colore verde per il link attivo */
+    font-weight: bold;
+    text-decoration: underline; /* Sottolineatura per il link attivo */
+  }
+  
+  /* Mobile view */
+  @media (max-width: 768px) {
+    .navbar-nav {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .nav-item {
+      margin-bottom: 1rem;
+    }
+  }
+  
